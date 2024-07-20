@@ -39,6 +39,7 @@ body::-webkit-scrollbar-thumb:hover {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  scroll-padding-top: 150px;
 }
 body {
   min-width: 150px;
@@ -168,14 +169,15 @@ nav {
   justify-content: center;
 }
 .hero-right img {
- width: 75%;
+ width: 83%;
  border-radius: 50%;
  box-shadow: 1.5rem 1.5rem 7rem var(--color);
- border: 0.5rem solid var(--bgcolor2);
+ border: 1.2rem solid #fff;
  -webkit-border-radius: 50%;
  -moz-border-radius: 50%;
  -ms-border-radius: 50%;
  -o-border-radius: 50%;
+ outline: 0.4rem solid var(--color);
 }
 
 .hero-left-items {
@@ -245,7 +247,7 @@ nav {
 }
 .edu-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem;
 }
 .edu-item {
@@ -338,6 +340,11 @@ nav {
   transition: all 0.2s linear;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  height: 40%;
+  object-fit: cover;
+}
+.peoject-item-img img{
+  height: 100%;
 }
 .peoject-item-cont {
   display: flex;
@@ -559,7 +566,7 @@ nav {
 }
 .testimo-items {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 .testimo-item {
@@ -625,10 +632,6 @@ nav {
   html {
     font-size: 57%;
   }
-  .edu-items {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
 
   .project-items {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -636,6 +639,59 @@ nav {
 
   .services-items {
     grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
+  }
+}
+
+
+@media (width<=992px) {
+  .content-box {
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .contact-section {
+    width: 90%;
+  }
+  .contact-right{
+    width: 100%;
+  }
+  .content-right-txtaera{
+    width: 100%;
+  }
+  .project-section {
+    width: 75%;
+  }
+  .hero-section {
+    margin: 2rem auto;
+    flex-direction: column;
+  }
+  .hero-left {
+    padding: 0;
+  }
+  .hero-right img {
+    width: 50%;
+  }
+  header {
+    margin-bottom: 2rem;
+  }
+  .hero-right {
+    margin-top: 5.5rem;
+  }
+  .edu-section {
+    margin: 11rem auto;
+  }
+
+  html {
+    font-size: 55%;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .tech-items {
+    grid-template-columns: repeat(auto-fit,minmax(90px,1fr));
+  }
+  .edu-items{
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
@@ -666,52 +722,10 @@ nav {
 }
 }
 
-@media (width<=992px) {
-  .content-box {
-    flex-direction: column;
-    align-items: center;
-  }
-  .contact-section {
-    width: 60%;
-  }
-  .project-section {
-    width: 75%;
-  }
-  .hero-section {
-    margin: 2rem auto;
-    flex-direction: column;
-  }
-  .hero-left {
-    padding: 0;
-  }
-  .hero-right img {
-    width: 40%;
-  }
-  header {
-    margin-bottom: 2rem;
-  }
-  .hero-right {
-    margin-top: 5.5rem;
-  }
-  .edu-section {
-    margin: 11rem auto;
-  }
-  .testimo-items {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  html {
-    font-size: 55%;
-  }
-  body {
-    overflow-x: hidden;
-  }
-  .tech-items {
-    grid-template-columns: repeat(auto-fit,minmax(90px,1fr));
-  }
-}
+
 
 @media (width<=576px) {
-  .services-section, .contact-section ,.project-section ,.edu-section{
+  .services-section, .project-section ,.edu-section{
     width: 90%;
   }
   .edu-item {
@@ -719,6 +733,9 @@ nav {
   }
   .hero-right img {
     width: 60%;
+  }
+  .contact-right{
+    padding: 0;
   }
 }
 @media (width<=320px) {
