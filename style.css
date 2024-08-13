@@ -1,9 +1,10 @@
 :root {
-  --bgcolor: #fff;
+  --bgcolor: #fbfcf8;
   --bgcolor2: #cecefc;
   --color: #3030ff;
-  --color2: #4a4848;
-  --color3: #5a5959;
+  --color2: #171717;
+  --color3: #4a4848;
+  --headingColor : #0c0c0c;
 }
 * {
   margin: 0;
@@ -40,8 +41,11 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   scroll-padding-top: 150px;
+  height: 100%;
+  width: 100%;
 }
 body {
+  height: 100%;
   min-width: 150px;
   width: 100%;
   background-color: var(--bgcolor);
@@ -56,7 +60,7 @@ h2 {
 }
 h3 {
   font-size: 2rem;
-  color: #000;
+  color: var(--headingColor);
 }
 /**************************************Nav Section*********************************************/
 .nav-section {
@@ -69,6 +73,8 @@ h3 {
 }
 .logo-text {
   font-size: 4.5rem;
+  color:var(--headingColor);
+  font-weight: 600;
 }
 .logo-text::after {
   content: ".lk";
@@ -124,8 +130,9 @@ nav {
   display: flex;
   flex-direction: column;
 }
-.bar-icon{
+.menu-icon{
   display: none;
+  cursor: pointer;
   & i{
     font-size: 3.7rem;
     color: var(--color);
@@ -189,25 +196,21 @@ nav {
   font-size: 3.3rem;
   color: var(--color);
 }
-.hero-left-item2 {
+.hero-left-item2{
   font-size: 6.3rem;
   color: var(--color);
 }
-.hero-left-item2::before {
-  content: "I'm ";
+.hero-left-item2 span {
+  font-size: 6.3rem;
   color: var(--color2);
 }
 .hero-left-item3 {
   font-size: 3.3rem;
   color: var(--color);
 }
-.hero-left-item3::before {
-  content: "a ";
-  color: var(--color2);
-}
-.hero-left-item3::after {
-  content: "Developer";
-  color: var(--color2);
+.hero-left-item3 span{
+  font-size: 3.3rem;
+  color: var(--headingColor);
 }
 .hero-left-dic {
   font-size: 1.6rem;
@@ -255,7 +258,6 @@ nav {
   padding: 2rem;
   display: flex;
   gap: 2rem;
-  height: auto;
   align-items: center;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: box-shadow 0.2s linear;
@@ -392,7 +394,6 @@ nav {
   grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
 }
 .tech-item {
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -621,8 +622,8 @@ nav {
   display: flex;
   gap: 1.5rem;
   & i{
-    color: var(--color2);
-  font-size: 2.5rem;
+  color: var(--color2);
+  font-size: 3rem;
   }
 }
 /****************************************Footer Section*********************************************/
@@ -691,34 +692,60 @@ nav {
     grid-template-columns: repeat(auto-fit,minmax(90px,1fr));
   }
   .edu-items{
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .contact-right-ip input {
+    padding: 1.5rem 0rem;
   }
 }
 
 @media (width<=768px) {
   .nav-section {
     align-items: center;
+    position: relative;
+    padding: 0 4.5rem;
+    width: 100%;
   }
   .nav-left-div p {
     text-align: center;
-  }
-  .nav-right-div {
-    display: none;
   }
   .hero-section {
     width: 90%;
   }
   .nav-right-div{
-    display: none;
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--color);
+    gap: 10vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    translate: 100%;
+    transition: all 0.2s linear;
+    z-index: 888;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+}
+  .nav-right-div .nav-links a{
+    color: var(--bgcolor);
+      font-size: 2.3rem;
+      font-weight: 900;
   }
-  .bar-icon {
-    display: flex;
+  .menu-icon {
+    display: block;
+  }
+  .menu-icon i{
+    z-index: 999999;
+    position: relative;
   }
  .tech-section{
   width: 90%;
  }
  .tech-item img {
-  width: 7rem;
+  width: 7.8rem;
 }
 }
 
@@ -735,7 +762,7 @@ nav {
     width: 60%;
   }
   .contact-right{
-    padding: 0;
+    padding:1rem 0;
   }
 }
 @media (width<=320px) {
