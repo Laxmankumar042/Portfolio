@@ -215,7 +215,7 @@ nav {
 .hero-left-dic {
   font-size: 1.6rem;
   line-height: 1.5;
-  word-wrap: break-word;
+  text-wrap: wrap;
 }
 .social-icons {
   display: flex;
