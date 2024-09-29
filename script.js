@@ -1,27 +1,32 @@
+const menuIconDiv = document.querySelector(" .menu-btn");
 const menuIcon = document.querySelector(".menu-icon");
+const closeIcon = document.querySelector(".close-icon");
 const rightDiv = document.querySelector(".nav-right-div");
 const navLinks = document.querySelectorAll(".nav-links");
 let body = document.querySelector("body");
 let isBarIconChecked = true;
 
-menuIcon.addEventListener("click", () => {
+menuIconDiv.addEventListener("click", (e) => {
   if (isBarIconChecked === true) {
-    rightDiv.style.translate = "0";
-    menuIcon.innerHTML = `<i class="fa-solid fa-xmark" style = 'color : #fbfcf8'></i>`;
-    body.style.overflow = "hidden";
+    rightDiv.classList.add("active");
+    menuIconDiv.innerHTML = '<i class="fa-solid fa-xmark close-icon"></i>';
+    body.style.overflowY = "hidden";
     isBarIconChecked = false;
   } else {
-    rightDiv.style.translate = "100%";
-    menuIcon.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-    body.style.overflow = "auto";
+    rightDiv.classList.remove("active");
+    menuIconDiv.innerHTML =
+      '<i class="fa-sharp fa-solid fa-bars menu-btn"></i>';
+    body.style.overflowY = "auto";
     isBarIconChecked = true;
   }
-});
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    body.style.overflow = "auto";
-    rightDiv.style.translate = "100%";
-    menuIcon.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-    isBarIconChecked = true;
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      rightDiv.classList.remove("active");
+      menuIconDiv.innerHTML =
+        '<i class="fa-sharp fa-solid fa-bars menu-btn"></i>';
+      body.style.overflowY = "auto";
+      isBarIconChecked = true;
+    });
   });
 });
