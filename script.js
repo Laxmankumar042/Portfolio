@@ -19,7 +19,7 @@ menuIconDiv.addEventListener("click", (e) => {
     body.style.overflowY = "auto";
     isBarIconChecked = true;
   }
-
+  
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       rightDiv.classList.remove("active");
