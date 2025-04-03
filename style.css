@@ -533,8 +533,13 @@ header nav .menu-btn .close-icon{
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
+  transition: all 0.2s linear;
 }
-.services-item::before{
+.services-item:hover{
+  background-color: var(--bgcolor2);
+  scale:1.05;
+}
+/* .services-item::before{
   content: '';
   height: 1rem;
   color: #000;
@@ -552,7 +557,7 @@ header nav .menu-btn .close-icon{
 }
 .services-item:hover::before{
   height: 100%; 
-}
+} */
 .services-item-left i {
   color: var(--color);
   background-color: var(--bgcolor2);
