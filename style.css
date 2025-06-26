@@ -45,8 +45,10 @@ html {
   width: 100%;
 }
 body {
+  max-width: 1700px;
   height: 100%;
   min-width: 150px;
+  margin: 0 auto;
   width: 100%;
   background-color: var(--bgcolor);
   overflow-x: hidden;
@@ -145,7 +147,7 @@ header nav .menu-btn .close-icon{
   margin: 12rem auto;
 }
 .hero-left {
-  width: 95%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   padding: 3rem;
@@ -157,7 +159,7 @@ header nav .menu-btn .close-icon{
   justify-content: center;
 }
 .hero-right img {
- width: 83%;
+ width: 95%;
  border-radius: 50%;
  box-shadow: 1.5rem 1.5rem 7rem var(--color);
  border: 1.2rem solid #fff;
