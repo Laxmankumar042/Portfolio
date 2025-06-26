@@ -664,6 +664,9 @@ header nav .menu-btn .close-icon{
 
 
 @media (width<=992px) {
+  .hero-left{
+    width: 100%;
+  }
   header nav .nav-right-div{
     position: absolute;
     top: 0;
